@@ -14,6 +14,8 @@ This project is an **Automatic Composition Software** that leverages the **Penta
 - **Audio Engine:** FMOD Studio API
 - **IDE:** Visual Studio 2022
 
+
+
 ## Project Structure
 ```text
 Instrument(GUI)/
@@ -23,7 +25,7 @@ Instrument(GUI)/
 ├── Track.cpp/h        # Track management and sequencer logic
 ├── CInstrumentDlg.cpp # MFC GUI main dialog controller
 └── Instrument(GUI).sln # Visual Studio solution file
-
+## How To USE
 [Installation & FMOD Configuration]
 Installation & FMOD Configuration
 To build and run this project, you need to configure the FMOD Studio API within your Visual Studio environment.
@@ -61,3 +63,5 @@ Ensure that the necessary FMOD DLL files (fmod.dll, fmodstudio.dll) are placed i
 
 Pro Tip
 If you encounter "Missing DLL" errors at runtime, simply copy the .dll files from the FMOD api/core/lib/x64 folder into your project's x64/Debug or x64/Release folder where the .exe is generated.
+
+
