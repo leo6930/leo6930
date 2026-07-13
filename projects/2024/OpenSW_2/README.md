@@ -17,6 +17,7 @@ This project is an **Automatic Composition Software** that leverages the **Penta
 
 
 ## Project Structure
+
 ```text
 Instrument(GUI)/
 ├── res/               # Program resources (icons, images)
@@ -25,11 +26,7 @@ Instrument(GUI)/
 ├── Track.cpp/h        # Track management and sequencer logic
 ├── CInstrumentDlg.cpp # MFC GUI main dialog controller
 └── Instrument(GUI).sln # Visual Studio solution file
-```text
 
-## HOW TO USE
-
-[Installation & FMOD Configuration]
 Installation & FMOD Configuration
 To build and run this project, you need to configure the FMOD Studio API within your Visual Studio environment.
 
@@ -63,8 +60,4 @@ Add fmod_vc.lib and fmodstudio_vc.lib.
 
 3. Runtime Files
 Ensure that the necessary FMOD DLL files (fmod.dll, fmodstudio.dll) are placed in the same directory as your project's executable (.exe) file to ensure the program runs correctly.
-
-Pro Tip
-If you encounter "Missing DLL" errors at runtime, simply copy the .dll files from the FMOD api/core/lib/x64 folder into your project's x64/Debug or x64/Release folder where the .exe is generated.
-
 
