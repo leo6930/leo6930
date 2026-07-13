@@ -1,0 +1,6 @@
+.vs/
+x64/
+*.pch
+*.ipch
+*.db
+*.pdb
