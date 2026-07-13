@@ -56,6 +56,17 @@ C. Linker Dependencies:
 
 Go to Linker > Input > Additional Dependencies.
 
+Add the following library files:
+
+fmod_vc.lib
+
+fmodstudio_vc.lib
+
+3. Runtime Files
+Ensure that the necessary FMOD DLL files (fmod.dll, fmodstudio.dll) are placed in the same directory as your project's executable (.exe) file to ensure the program runs correctly.
+
+Go to Linker > Input > Additional Dependencies.
+
 Add fmod_vc.lib and fmodstudio_vc.lib.
 
 3. Runtime Files
