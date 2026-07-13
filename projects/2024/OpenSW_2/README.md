@@ -25,7 +25,10 @@ Instrument(GUI)/
 ├── Track.cpp/h        # Track management and sequencer logic
 ├── CInstrumentDlg.cpp # MFC GUI main dialog controller
 └── Instrument(GUI).sln # Visual Studio solution file
-## How To USE
+```text
+
+## HOW TO USE
+
 [Installation & FMOD Configuration]
 Installation & FMOD Configuration
 To build and run this project, you need to configure the FMOD Studio API within your Visual Studio environment.
