@@ -38,3 +38,6 @@ This project implements an autonomous line-following system using a single camer
 *This project was developed to maximize the tracking precision and speed of the TurtleBot3 Waffle in an autonomous navigation environment.*
 
 **Developer:** Geonho Kim (leo6930)
+
+## Demo Video
+[![Watch the video](https://youtube.com/shorts/JEkBP9lE6tw?si=z6M5vzg1-jZMte-R)
