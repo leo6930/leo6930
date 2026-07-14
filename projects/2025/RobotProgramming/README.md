@@ -40,4 +40,8 @@ This project implements an autonomous line-following system using a single camer
 **Developer:** Geonho Kim (leo6930)
 
 ## Demo Video
-[![Watch the video](https://youtube.com/shorts/JEkBP9lE6tw?si=z6M5vzg1-jZMte-R)
+Click the image below to watch the TurtleBot3 Waffle line-following test video:
+
+[![Line Following Demo](https://img.youtube.com/vi/JEkBP9lE6tw/0.jpg)](https://youtube.com/shorts/JEkBP9lE6tw)
+
+*Note: This video demonstrates the real-time line-following performance of the robot.*
