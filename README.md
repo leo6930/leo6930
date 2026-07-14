@@ -9,7 +9,6 @@ I am passionate about autonomous driving, GPS, and high-precision localization s
 * **Chungbuk National University** | Mar 2021 – Present
     * Major: Intelligent Systems and Robotics
     * Minor: Autonomous Driving
-    * GPA: 3.61/4.5
 
 ## 🏆 Leadership & Activities
 * **Clothoid-R** | Team Leader / Localization Engineer
