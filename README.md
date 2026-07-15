@@ -10,6 +10,32 @@ I am passionate about autonomous driving, GPS, and high-precision localization s
     * Major: Intelligent Systems and Robotics
     * Minor: Autonomous Driving
 
+## 📝 Publications & Research
+
+### 📄 Conference Papers
+* **"Next-Generation PTN (Positioning, Tracking, and Navigation) Technology and Applications in the AI Era"**
+  * **Authors:** **Geonho Kim**, Chansik Park (SANS Lab, Chungbuk National University)
+  * **Venue:** *The Institute of Positioning, Navigation, and Timing (IPNT) Conference*, November 2025
+  * **Presentation:** Oral Presentation
+  * **Brief Description:** This paper explores next-generation PTN technologies designed to meet the demands of the AI era. It focuses on optimizing positioning, tracking, and navigation frameworks for high-precision autonomous systems, leveraging advanced multi-sensor integration.
+
+---
+
+## 👨‍💻 About Me
+* 🎓 **Undergraduate Research Student** at **SANS Lab** (Department of Intelligent Systems & Robotics, Chungbuk National University)
+* 🚀 **Double Major** in **Autonomous Navigation Convergence Technology**
+* 🏎️ **Team Leader** of the Autonomous Driving Research Team **Clothoid-R**
+
+---
+
+## 🎯 Research Interests
+* **Vehicle Localization Systems** & High-Precision Positioning
+* **GPS / GNSS** Technologies
+* **Multi-Sensor Fusion** (LiDAR, IMU, GPS/GNSS)
+* Autonomous Driving Control & Navigation Algorithms
+
+---
+
 ## 🏆 Leadership & Activities
 * **Clothoid-R** | Team Leader / Localization Engineer
     * Leading the autonomous driving research team and directing overall project schedules.
