@@ -12,19 +12,10 @@ I am passionate about autonomous driving, GPS, and high-precision localization s
 
 ## 📝 Publications & Research
 
-### 📄 Conference Papers
-* **"Next-Generation PTN (Positioning, Tracking, and Navigation) Technology and Applications in the AI Era"**
+### 📄 Conference Paper
+* **"Comparison of Accuracy and Implementation Feasibility of SPP, PPP, and RTK Techniques for Autonomous Vehicle Applications Using RTKLIB"**
   * **Authors:** **Geonho Kim**, Chansik Park (SANS Lab, Chungbuk National University)
-  * **Venue:** *The Institute of Positioning, Navigation, and Timing (IPNT) Conference*, November 2025
-  * **Presentation:** Oral Presentation
-  * **Brief Description:** This paper explores next-generation PTN technologies designed to meet the demands of the AI era. It focuses on optimizing positioning, tracking, and navigation frameworks for high-precision autonomous systems, leveraging advanced multi-sensor integration.
-
----
-
-## 👨‍💻 About Me
-* 🎓 **Undergraduate Research Student** at **SANS Lab** (Department of Intelligent Systems & Robotics, Chungbuk National University)
-* 🚀 **Double Major** in **Autonomous Navigation Convergence Technology**
-* 🏎️ **Team Leader** of the Autonomous Driving Research Team **Clothoid-R**
+  * **Description:** A comparative study evaluating the positioning accuracy and practical feasibility of Single Point Positioning (SPP), Precise Point Positioning (PPP), and Real-Time Kinematic (RTK) techniques. The research focuses on benchmarking these GNSS approaches using RTKLIB to optimize high-precision localization systems for autonomous vehicles.
 
 ---
 
