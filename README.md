@@ -15,7 +15,8 @@ I am passionate about autonomous driving, GPS, and high-precision localization s
 ### 📄 Conference Paper
 * **"Comparison of Accuracy and Implementation Feasibility of SPP, PPP, and RTK Techniques for Autonomous Vehicle Applications Using RTKLIB"**
   * **Authors:** **Geonho Kim**, Chansik Park (SANS Lab, Chungbuk National University)
-  * **Description:** A comparative study evaluating the positioning accuracy and practical feasibility of Single Point Positioning (SPP), Precise Point Positioning (PPP), and Real-Time Kinematic (RTK) techniques. The research focuses on benchmarking these GNSS approaches using RTKLIB to optimize high-precision localization systems for autonomous vehicles.
+  * **Description:**
+  * comparative study evaluating Single Point Positioning (SPP), Precise Point Positioning (PPP), and Real-Time Kinematic (RTK) techniques using RTKLIB to determine the most suitable and viable GNSS approach for autonomous driving applications.
 
 
 Link: https://ipnt.or.kr/2025proc/6
