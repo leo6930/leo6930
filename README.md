@@ -1,7 +1,7 @@
 # Hi, I'm Geonho Kim
 
 Bachelor student majoring in **Intelligent Systems and Robotics** at Chungbuk National University. 
-I am passionate about autonomous driving, GPS, and high-precision localization systems.
+I am passionate about autonomous driving, GPS, high-precision localization systems, digital twin, and data augmentation.
 
 ---
 
@@ -9,6 +9,10 @@ I am passionate about autonomous driving, GPS, and high-precision localization s
 * **Chungbuk National University** | Mar 2021 – Present
     * Major: Intelligent Systems and Robotics
     * Minor: Autonomous Driving
+
+## 💼 Experience
+* **Partridge Systems** | Research Intern | Jun 22, 2026 – Present
+    * Building digital twin environments from real driving data for autonomous driving simulation.
 
 ## 📝 Publications & Research
 
@@ -27,6 +31,8 @@ Link: https://ipnt.or.kr/2025proc/6
 * **Vehicle Localization Systems** & High-Precision Positioning
 * **GPS / GNSS** Technologies
 * **Multi-Sensor Fusion** (LiDAR, IMU, GPS/GNSS)
+* **Digital Twin** & Simulation-Based Validation for Autonomous Driving
+* **Scenario Generation & Data Augmentation**
 * Autonomous Driving Control & Navigation Algorithms
 
 ---
@@ -43,7 +49,7 @@ Link: https://ipnt.or.kr/2025proc/6
 
 ## 🛠 Skills & Techniques
 * **Languages**: Python, C++, C
-* **Tools**: RTKLIB, ROS (Robot Operating System)
+* **Tools**: RTKLIB, ROS (Robot Operating System), CARLA, NVIDIA Omniverse
 
 ## 📚 Relevant Coursework
 * **Robotics & Control**: Automatic Control, Modern Control, Robot Programming, Artificial Intelligence, Digital Signal Processing, Sensor Engineering
