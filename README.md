@@ -1,7 +1,7 @@
 # Hi, I'm Geonho Kim
 
 Bachelor student majoring in **Intelligent Systems and Robotics** at Chungbuk National University. 
-I am passionate about autonomous driving, GPS, high-precision localization systems, digital twin, and data augmentation.
+I am passionate about Robot, autonomous driving, GPS, high-precision localization systems, digital twin, and data augmentation.
 
 ---
 
