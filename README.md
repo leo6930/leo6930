@@ -36,6 +36,12 @@ I am passionate about Robot, autonomous driving, GPS, high-precision localizatio
 
 ---
 
+## 🏆 Awards
+* **Grand Prize (최우수상)** | 4th International University Student EV Autonomous Driving Competition (IEVE 2025) | Jul. 2025
+    * Advanced Autonomous Robot Race (1/2-scale EV) division — Localization Engineer
+
+---
+
 ## 🎯 Research Interests
 * **Vehicle Localization Systems** & High-Precision Positioning
 * **GPS / GNSS** Technologies
