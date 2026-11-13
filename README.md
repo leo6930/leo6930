@@ -1,7 +1,17 @@
-# Hi, I'm Geonho Kim
+# Hi, I'm Geonho Kim 👋
 
-Bachelor student majoring in **Intelligent Systems and Robotics** at Chungbuk National University. 
+Bachelor student majoring in **Intelligent Systems and Robotics** at Chungbuk National University.
 I am passionate about Robot, autonomous driving, GPS, high-precision localization systems, digital twin, and data augmentation.
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
+![ROS](https://img.shields.io/badge/ROS-22314E?style=flat-square&logo=ros&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![CARLA](https://img.shields.io/badge/CARLA-1F2937?style=flat-square)
+![NVIDIA Omniverse](https://img.shields.io/badge/NVIDIA%20Omniverse-76B900?style=flat-square&logo=nvidia&logoColor=white)
+![RTKLIB](https://img.shields.io/badge/RTKLIB-GNSS-0A7BBB?style=flat-square)
 
 ---
 
@@ -19,11 +29,8 @@ I am passionate about Robot, autonomous driving, GPS, high-precision localizatio
 ### 📄 Conference Paper
 * **"Comparison of Accuracy and Implementation Feasibility of SPP, PPP, and RTK Techniques for Autonomous Vehicle Applications Using RTKLIB"**
   * **Authors:** **Geonho Kim**, Chansik Park (SANS Lab, Chungbuk National University)
-  * **Description:**
-  * comparative study evaluating Single Point Positioning (SPP), Precise Point Positioning (PPP), and Real-Time Kinematic (RTK) techniques using RTKLIB to determine the most suitable and viable GNSS approach for autonomous driving applications.
-
-
-Link: https://ipnt.or.kr/2025proc/6
+  * **Description:** A comparative study evaluating Single Point Positioning (SPP), Precise Point Positioning (PPP), and Real-Time Kinematic (RTK) techniques using RTKLIB to determine the most suitable and viable GNSS approach for autonomous driving applications.
+  * **Link:** https://ipnt.or.kr/2025proc/6
 
 ---
 
@@ -34,6 +41,18 @@ Link: https://ipnt.or.kr/2025proc/6
 * **Digital Twin** & Simulation-Based Validation for Autonomous Driving
 * **Scenario Generation & Data Augmentation**
 * Autonomous Driving Control & Navigation Algorithms
+
+---
+
+## 🚀 Projects
+
+| Year | Project | Description | Stack |
+|:---:|---|---|---|
+| 2025 | [🔐 Face Recognition 2FA Smart Safe](projects/2025/Face%20Recognition%202FA%20Smart%20Safe) | Two-factor safe (face recognition + keypad). Sends an intruder photo and the safe's GPS location to Google Drive after 3 failed attempts. | Python, OpenCV, Topst D3, GPS |
+| 2025 | [🤖 Vision-Based Line Following](projects/2025/RobotProgramming) | Camera-based line following on TurtleBot3 Waffle with latency-compensated PID control | ROS 2, OpenCV, Jetson Nano |
+| 2025 | [🏢 Seoul Residential Satisfaction Prediction](projects/2025/Seoul%20Residential%20Satisfaction%20Prediction%20and%20Factor%20Analysis) | MLP model on Seoul Survey data, including diagnosing and fixing data leakage | PyTorch, Pandas |
+| 2024 | [🎸 Pentatonic Automatic Composer](projects/2024/OpenSW_2) | MFC GUI app that generates melodies from the pentatonic scale | C++, MFC |
+| 2024 | [🎵 Melodic Pentatonic Generator](projects/2024/opensw_middle) | Terminal music sequencer that builds pentatonic scales from diatonic scales | C |
 
 ---
 
@@ -50,6 +69,7 @@ Link: https://ipnt.or.kr/2025proc/6
 ## 🛠 Skills & Techniques
 * **Languages**: Python, C++, C
 * **Tools**: RTKLIB, ROS (Robot Operating System), CARLA, NVIDIA Omniverse
+* **Libraries**: OpenCV, PyTorch
 
 ## 📚 Relevant Coursework
 * **Robotics & Control**: Automatic Control, Modern Control, Robot Programming, Artificial Intelligence, Digital Signal Processing, Sensor Engineering
@@ -59,6 +79,6 @@ Link: https://ipnt.or.kr/2025proc/6
 ---
 
 ## 📧 Contact
-* **Email**: leo6930@naver.com
-* **GitHub**: https://github.com/leo6930
-* **CV**: [View my formal CV (PDF)] https://github.com/leo6930/leo6930/blob/main/%EA%B9%80%EA%B1%B4%ED%98%B8CV.pdf
+[![Email](https://img.shields.io/badge/Email-leo6930%40naver.com-03C75A?style=flat-square&logo=naver&logoColor=white)](mailto:leo6930@naver.com)
+[![GitHub](https://img.shields.io/badge/GitHub-leo6930-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/leo6930)
+[![CV](https://img.shields.io/badge/CV-PDF-B31B1B?style=flat-square&logo=adobeacrobatreader&logoColor=white)](https://github.com/leo6930/leo6930/blob/main/%EA%B9%80%EA%B1%B4%ED%98%B8CV.pdf)

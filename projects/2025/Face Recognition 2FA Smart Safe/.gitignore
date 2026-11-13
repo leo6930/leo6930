@@ -1,0 +1,6 @@
+# Google 서비스 계정 키 — 절대 커밋하지 말 것
+credentials.json
+*.json
+# 실행 중 생성되는 파일
+gps_map_*.html
+images/

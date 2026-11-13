@@ -1,0 +1,6 @@
+opencv-python
+face_recognition
+pyserial
+folium
+google-api-python-client
+google-auth
