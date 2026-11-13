@@ -8,6 +8,8 @@ I am passionate about Robot, autonomous driving, GPS, high-precision localizatio
 ![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
 ![ROS](https://img.shields.io/badge/ROS-22314E?style=flat-square&logo=ros&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-0097A7?style=flat-square&logo=google&logoColor=white)
+![Arduino](https://img.shields.io/badge/Arduino-00878F?style=flat-square&logo=arduino&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
 ![CARLA](https://img.shields.io/badge/CARLA-1F2937?style=flat-square)
 ![NVIDIA Omniverse](https://img.shields.io/badge/NVIDIA%20Omniverse-76B900?style=flat-square&logo=nvidia&logoColor=white)
@@ -48,6 +50,7 @@ I am passionate about Robot, autonomous driving, GPS, high-precision localizatio
 
 | Year | Project | Description | Stack |
 |:---:|---|---|---|
+| 2026 | [🪑 Intelligent Posture Correction Chair](projects/2026/Posture%20Correction%20Smart%20Chair) | Capstone: chair that fuses MediaPipe neck angle and 32-ch pressure data to detect bad posture and correct it with 4 seat motors | Python, MediaPipe, Arduino Mega |
 | 2025 | [🔐 Face Recognition 2FA Smart Safe](projects/2025/Face%20Recognition%202FA%20Smart%20Safe) | Two-factor safe (face recognition + keypad). Sends an intruder photo and the safe's GPS location to Google Drive after 3 failed attempts. | Python, OpenCV, Topst D3, GPS |
 | 2025 | [🤖 Vision-Based Line Following](projects/2025/RobotProgramming) | Camera-based line following on TurtleBot3 Waffle with latency-compensated PID control | ROS 2, OpenCV, Jetson Nano |
 | 2025 | [🏢 Seoul Residential Satisfaction Prediction](projects/2025/Seoul%20Residential%20Satisfaction%20Prediction%20and%20Factor%20Analysis) | MLP model on Seoul Survey data, including diagnosing and fixing data leakage | PyTorch, Pandas |
@@ -69,7 +72,8 @@ I am passionate about Robot, autonomous driving, GPS, high-precision localizatio
 ## 🛠 Skills & Techniques
 * **Languages**: Python, C++, C
 * **Tools**: RTKLIB, ROS (Robot Operating System), CARLA, NVIDIA Omniverse
-* **Libraries**: OpenCV, PyTorch
+* **Libraries**: OpenCV, MediaPipe, PyTorch
+* **Hardware**: Arduino, Jetson Nano, Embedded sensors & motor control
 
 ## 📚 Relevant Coursework
 * **Robotics & Control**: Automatic Control, Modern Control, Robot Programming, Artificial Intelligence, Digital Signal Processing, Sensor Engineering

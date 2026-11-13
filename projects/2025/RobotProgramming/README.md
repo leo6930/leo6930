@@ -1,5 +1,11 @@
 # 🤖 Vision-Based Line Following (TurtleBot3 Waffle)
 
+![ROS 2](https://img.shields.io/badge/ROS%202-22314E?style=flat-square&logo=ros&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
+![Jetson Nano](https://img.shields.io/badge/Jetson%20Nano-76B900?style=flat-square&logo=nvidia&logoColor=white)
+![TurtleBot3](https://img.shields.io/badge/TurtleBot3-Waffle-orange?style=flat-square)
+
 This project implements an autonomous line-following system using a single camera on a **TurtleBot3 Waffle** platform, accelerated by the **NVIDIA Jetson Nano**. The system employs real-time computer vision to detect the track and an advanced control algorithm to maintain stability even at high speeds or during sharp turns.
 
 ---
@@ -35,13 +41,15 @@ This project implements an autonomous line-following system using a single camer
 
 ---
 
-*This project was developed to maximize the tracking precision and speed of the TurtleBot3 Waffle in an autonomous navigation environment.*
-
-**Developer:** Geonho Kim (leo6930)
-
-## Demo Video
+## 🎬 Demo Video
 Click the image below to watch the TurtleBot3 Waffle line-following test video:
 
 [![Line Following Demo](https://img.youtube.com/vi/JEkBP9lE6tw/0.jpg)](https://youtube.com/shorts/JEkBP9lE6tw)
 
 *Note: This video demonstrates the real-time line-following performance of the robot.*
+
+---
+
+*This project was developed to maximize the tracking precision and speed of the TurtleBot3 Waffle in an autonomous navigation environment.*
+
+**Developer:** Geonho Kim (leo6930)

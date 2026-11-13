@@ -1,22 +1,31 @@
-# Pentatonic Automatic Composer (MFC)
+# 🎸 Pentatonic Automatic Composer (MFC)
+
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
+![MFC](https://img.shields.io/badge/GUI-MFC-5C2D91?style=flat-square)
+![FMOD](https://img.shields.io/badge/Audio-FMOD-000000?style=flat-square)
+![Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-5C2D91?style=flat-square&logo=visualstudio&logoColor=white)
 
 This project is an **Automatic Composition Software** that leverages the **Pentatonic Scale** algorithm to generate musical melodies automatically. It provides a user-friendly interface built with **MFC (Microsoft Foundation Class)** to visualize, edit, and play the generated compositions.
 
-## Key Features
+---
+
+## 🚀 Key Features
 - **Pentatonic Composition Algorithm:** Automatically generates melodic sequences based on pentatonic scale rules.
 - **Instrument Variety:** Supports real-time playback with various high-quality samples, including Drum, Guitar, and Piano.
 - **GUI Control Interface:** A Windows-based MFC interface designed for easy track management, instrument selection, and playback control.
 - **Audio Engine:** Integrated with the **FMOD Studio API** for robust, low-latency audio rendering and track sequencing.
 
-## Tech Stack
+---
+
+## 🛠 Tech Stack
 - **Language:** C++
 - **GUI Framework:** MFC (Microsoft Foundation Class)
 - **Audio Engine:** FMOD Studio API
 - **IDE:** Visual Studio 2022
 
+---
 
-
-## Project Structure
+## 📁 Project Structure
 
 ```text
 Instrument(GUI)/
@@ -28,7 +37,9 @@ Instrument(GUI)/
 └── Instrument(GUI).sln # Visual Studio solution file
 ```
 
-## Installation & FMOD Configuration
+---
+
+## ⚙️ Installation & FMOD Configuration
 
 To build and run this project, you need to configure the FMOD Studio API within your Visual Studio environment.
 
@@ -56,6 +67,9 @@ Once installed, you need to link the FMOD libraries to your project:
 
 ### 3. Runtime Files
 - Ensure that the necessary FMOD DLL files (`fmod.dll`, `fmodstudio.dll`) are placed in the same directory as your project's executable (`.exe`) file to ensure the program runs correctly.
-3. Runtime Files
-Ensure that the necessary FMOD DLL files (fmod.dll, fmodstudio.dll) are placed in the same directory as your project's executable (.exe) file to ensure the program runs correctly.
 
+---
+
+*This project was developed to make pentatonic-based composition easy to explore through a visual, playable interface.*
+
+**Developer:** Geonho Kim (leo6930)

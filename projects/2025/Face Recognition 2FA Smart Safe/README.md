@@ -1,5 +1,11 @@
 # 🔐 Face Recognition-Based Two-Factor Authentication Smart Safe
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
+![face_recognition](https://img.shields.io/badge/face__recognition-dlib-informational?style=flat-square)
+![Google Drive API](https://img.shields.io/badge/Google%20Drive%20API-4285F4?style=flat-square&logo=googledrive&logoColor=white)
+![Topst D3](https://img.shields.io/badge/Board-Topst%20D3-0052CC?style=flat-square)
+
 This project implements a smart safe secured by **two-factor authentication**: **face recognition with OpenCV** as the first factor and a **keypad password** as the second. A PC handles vision, GPS, and cloud upload, and a **Topst D3** board drives the LCD, LEDs, buzzer, servo lock, and motion sensor over UART. After three failed face authentication attempts, the system captures the intruder's photo and the safe's GPS location and uploads both to **Google Drive** so the owner can check them on a phone.
 
 <p align="center">

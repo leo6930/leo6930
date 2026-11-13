@@ -4,6 +4,12 @@
 > 
 > 서울서베이 데이터를 활용하여 서울시민의 주거 종합만족도를 예측하고, 만족도에 영향을 미치는 다각적 요인을 인공지능 다층 퍼셉트론(MLP) 모델로 분석하는 인공지능 프로젝트입니다.
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
+
 ---
 
 ## 📌 프로젝트 개요 (Overview)
@@ -66,3 +72,7 @@ PyTorch 기반의 **다층 퍼셉트론(MLP)** 구조를 채택했습니다. 과
 ## 🗺️ 자치구별 만족도 추론 및 시각화 (Inference & Visualization)
 * 학습된 전처리 메타 데이터(`preprocess_meta.pkl`)와 최적 가중치 파일(`satisfaction_model.pth`, `best_binary_model.pth`)을 저장하여 인프라 독립적인 추론 파이프라인을 구축했습니다.
 * 자치구별(`구코드`) 대표 행 데이터를 추출하여 각 구별 만족도 지수를 예측하고 텍스트 리포트 및 성능 곡선(ROC Curve, PR Curve, Loss Curve) 시각화를 지원합니다.
+
+---
+
+**Developer:** Geonho Kim (leo6930)
