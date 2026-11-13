@@ -56,8 +56,8 @@ flowchart LR
             SERVO[서보모터]
         end
     end
-    PC <-- "UART 115200bps" --> BOARD
-    PC -- "Drive API" --> DRIVE[(☁️ Google Drive)]
+    PC <-->|UART 115200bps| BOARD
+    PC -->|Drive API| DRIVE[(☁️ Google Drive)]
 ```
 
 <p align="center"><img src="assets/topst_d3_board.jpg" width="60%" alt="Topst D3 보드"></p>
