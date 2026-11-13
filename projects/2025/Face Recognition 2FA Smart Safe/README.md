@@ -1,144 +1,127 @@
-# 🔐 얼굴인식을 활용한 2단계 인증 금고 시스템
-> **Face Recognition-Based Two-Factor Authentication Smart Safe (with OpenCV)**
->
-> 얼굴 인식(1단계)과 키패드 비밀번호(2단계)로 금고를 여는 임베디드 보안 시스템입니다.
-> 인증에 3번 실패하면 침입자의 사진과 금고의 GPS 위치를 Google Drive로 보내 주인이 휴대폰에서 바로 확인할 수 있습니다.
+# 🔐 Face Recognition-Based Two-Factor Authentication Smart Safe
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
-![face_recognition](https://img.shields.io/badge/face__recognition-dlib-informational?style=flat-square)
-![Google Drive API](https://img.shields.io/badge/Google%20Drive%20API-4285F4?style=flat-square&logo=googledrive&logoColor=white)
-![Topst D3](https://img.shields.io/badge/Board-Topst%20D3-0052CC?style=flat-square)
-![GPS](https://img.shields.io/badge/GPS-u--blox-lightgrey?style=flat-square)
+This project implements a smart safe secured by **two-factor authentication**: **face recognition with OpenCV** as the first factor and a **keypad password** as the second. A PC handles vision, GPS, and cloud upload, and a **Topst D3** board drives the LCD, LEDs, buzzer, servo lock, and motion sensor over UART. After three failed face authentication attempts, the system captures the intruder's photo and the safe's GPS location and uploads both to **Google Drive** so the owner can check them on a phone.
 
 <p align="center">
-  <img src="assets/safe_front.jpg" width="49%" alt="금고 전면 - 웹캠과 LCD">
-  <img src="assets/safe_keypad_handle.jpg" width="49%" alt="금고 측면 - 키패드와 손잡이">
+  <img src="assets/safe_front.jpg" width="49%" alt="Safe front - webcam and LCD">
+  <img src="assets/safe_keypad_handle.jpg" width="49%" alt="Safe side - keypad and handle">
 </p>
 
-| 항목 | 내용 |
-|---|---|
-| 기간 | 2025 (최종 발표 2025-06-12) |
-| 팀 | 9조 · 박현, **김건호** |
+---
+
+## 🚀 Key Technical Features
+
+*   **Two-Factor Authentication:**
+    *   **1st Factor – Face Recognition:** Registered users' photos are encoded into **128-dimensional face embeddings** with `face_recognition` (dlib). Live frames are compared against them with a strict tolerance of **0.45** (default 0.6) to reduce false accepts.
+    *   **2nd Factor – Keypad Password:** The keypad prompt appears only after face authentication succeeds.
+*   **Intruder Alert System:**
+    *   After **3 consecutive face authentication failures**, the current frame is saved as an intruder photo.
+    *   The system parses `$GPGGA` / `$GNGGA` NMEA sentences from a u-blox GPS module and converts degrees-minutes into decimal degrees.
+    *   It builds an interactive location map with **folium** and uploads both the photo and the map to **Google Drive** through a service account, so the owner can check them from a smartphone.
+*   **Anti-Theft Monitoring:** An **MPU-6050** gyro sensor detects movement of the locked safe and triggers the LCD warning, red LED, and buzzer.
+*   **Hardware Feedback:** A green LED and the servo motor unlock the safe on success. A red LED and the buzzer go off on any failed attempt.
+*   **Low-Latency Capture:** Stale frames are flushed from the webcam buffer (`grab()` ×5, buffer size 1) so authentication always uses the latest image.
 
 ---
 
-## 📌 프로젝트 개요 (Overview)
-
-| 기능 | 설명 |
-|---|---|
-| **인증 시스템** | 1차: OpenCV + `face_recognition`으로 얼굴 인식 → 2차: 키패드 비밀번호 |
-| **보안 시스템** | 인증 성공 시 LCD 출력 · 초록 LED · 서보모터로 금고 열림 / 실패 시 빨간 LED · 부저 |
-| **도난방지 시스템** | MPU-6050 자이로센서로 금고 움직임을 감지하면 LCD에 표시하고 LED와 부저로 경보 |
-| **침입자 알림** | 얼굴 인증 3회 실패 시 침입자 사진과 GPS 위치 지도(HTML)를 Google Drive에 업로드 |
-
----
-
-## 🧩 하드웨어 구성 (Hardware)
+## 🧩 Hardware Architecture
 
 ```mermaid
 flowchart LR
     subgraph PC["💻 PC (Python)"]
-        CAM[USB 웹캠]
-        KEY[USB 키패드]
+        CAM[USB Webcam]
+        KEY[USB Keypad]
         GPS[u-blox GPS]
     end
     subgraph BOARD["🟦 Topst D3"]
         direction TB
         subgraph I2C["I²C"]
             LCD[LCD]
-            IMU[MPU-6050 자이로센서]
+            IMU[MPU-6050 Gyro]
         end
         subgraph GPIO["GPIO"]
-            GLED[초록 LED]
-            RLED[빨간 LED]
-            BUZ[부저]
-            SERVO[서보모터]
+            GLED[Green LED]
+            RLED[Red LED]
+            BUZ[Buzzer]
+            SERVO[Servo Motor]
         end
     end
     PC <-->|UART 115200bps| BOARD
     PC -->|Drive API| DRIVE[(☁️ Google Drive)]
 ```
 
-<p align="center"><img src="assets/topst_d3_board.jpg" width="60%" alt="Topst D3 보드"></p>
+<p align="center"><img src="assets/topst_d3_board.jpg" width="60%" alt="Topst D3 board"></p>
 
 ---
 
-## 🔄 동작 흐름 (Software Flow)
+## 🔄 Software Flow
 
 ```mermaid
 flowchart TD
-    S([시작]) --> F[얼굴 인식]
-    F -->|일치| P[비밀번호 입력]
-    F -->|불일치| R1[빨간 LED + 부저]
-    R1 --> C{실패 3회?}
-    C -->|아니오| F
-    C -->|예| INV[침입자 사진 촬영<br/>+ GPS 위치 지도 생성]
-    INV --> UP[Google Drive 업로드<br/>📱 휴대폰으로 확인]
-    P -->|일치| O[금고 열림<br/>초록 LED · 서보모터]
-    P -->|불일치| R2[빨간 LED + 부저] --> P
-    O --> L[LOCK 입력 → 서보모터로 잠금]
-    L --> M[MPU-6050 움직임 감지 대기]
-    M -->|움직임| A[빨간 LED + 부저 경보]
+    S([Start]) --> F[Face Recognition]
+    F -->|Match| P[Enter Password]
+    F -->|No match| R1[Red LED + Buzzer]
+    R1 --> C{3 failures?}
+    C -->|No| F
+    C -->|Yes| INV[Capture intruder photo<br/>+ build GPS location map]
+    INV --> UP[Upload to Google Drive<br/>📱 check on phone]
+    P -->|Match| O[Safe opens<br/>Green LED · Servo]
+    P -->|No match| R2[Red LED + Buzzer] --> P
+    O --> L[LOCK input → Servo locks]
+    L --> M[MPU-6050 motion monitoring]
+    M -->|Movement| A[Red LED + Buzzer alarm]
 ```
 
-### PC ↔ 보드 시리얼 프로토콜
+### PC ↔ Board Serial Protocol
 
-| 방향 | 메시지 | 의미 |
+| Direction | Message | Meaning |
 |---|---|---|
-| PC → 보드 | `FACE` | 얼굴 인식 시작 (LCD 안내) |
-| PC → 보드 | `REQ_PW` | 얼굴 인증 성공, 비밀번호 입력 요청 |
-| PC → 보드 | `OK` | 비밀번호 일치 → 금고 열림 |
-| PC → 보드 | `FAIL` | 얼굴 또는 비밀번호 불일치 → 경보 |
-| PC → 보드 | `1` | 금고 잠금 요청 |
-| 보드 → PC | `LOCKED` | 서보모터 잠금 완료 |
+| PC → Board | `FACE` | Start face recognition (LCD prompt) |
+| PC → Board | `REQ_PW` | Face verified, request password |
+| PC → Board | `OK` | Password correct → unlock |
+| PC → Board | `FAIL` | Face or password mismatch → alarm |
+| PC → Board | `1` | Lock request |
+| Board → PC | `LOCKED` | Servo lock completed |
 
 ---
 
-## ⚙️ 핵심 구현 (Implementation)
+## 🛠 Tech Stack
 
-### 1단계: 얼굴 인증
-* `images/known/` 폴더에 있는 등록 사용자 사진들을 **128차원 얼굴 임베딩**으로 바꿔 둡니다.
-* 웹캠 버퍼에 쌓인 오래된 프레임을 `grab()`으로 버린 뒤 가장 최근 프레임만 씁니다.
-* `compare_faces(..., tolerance=0.45)`: 기본값(0.6)보다 엄격한 임계값으로 다른 사람을 본인으로 잘못 인식할 가능성을 줄였습니다.
-
-### 2단계: 비밀번호 인증
-* 얼굴 인증에 성공하면 보드로 `REQ_PW`를 보내고 키패드 입력을 받습니다.
-* 비밀번호가 맞으면 금고가 열리고, 사용자가 `1`을 누르면 다시 잠깁니다.
-
-### 침입자 알림
-* 얼굴 인증이 3번 연속 실패하면 해당 프레임을 `images/invader/invader_<timestamp>.jpg`로 저장합니다.
-* GPS 모듈에서 `$GPGGA`/`$GNGGA` NMEA 문장을 파싱해 위·경도(도·분 → 십진 도)를 구합니다.
-* `folium`으로 금고 위치를 표시한 지도 `gps_map_<timestamp>.html`을 만듭니다.
-* 서비스 계정으로 **Google Drive API**에 사진과 지도를 업로드하고, 주인은 휴대폰으로 확인합니다.
+*   **Platform:** PC (Linux) + Topst D3 board
+*   **Language:** Python 3
+*   **Vision:** OpenCV, face_recognition (dlib)
+*   **Sensors / Actuators:** USB Webcam, USB Keypad, u-blox GPS, MPU-6050, LCD (I²C), LEDs, Buzzer, Servo Motor
+*   **Communication:** UART (pyserial)
+*   **Cloud / Visualization:** Google Drive API, folium
 
 ---
 
-## 🚀 실행 방법 (How to Run)
+## ⚙️ How to Use
 
-```bash
-pip install -r requirements.txt
+1.  **Install dependencies:** `pip install -r requirements.txt`
+2.  **Register users:** Put face photos of authorized users in `images/known/`.
+3.  **Configure environment variables** (defaults are at the top of `face_auth_safe.py`):
+    ```bash
+    export SAFE_DRIVE_FOLDER_ID=<Google Drive folder ID>
+    export SAFE_PASSWORD=<password>
+    export SAFE_CREDENTIALS=credentials.json   # service account key, never commit this
+    ```
+4.  **Run:** `python face_auth_safe.py`, then enter `1` to start an authentication session.
 
-# 환경변수 설정 (기본값은 코드 상단 참고)
-export SAFE_DRIVE_FOLDER_ID=<업로드할 Drive 폴더 ID>
-export SAFE_PASSWORD=<비밀번호>
-export SAFE_CREDENTIALS=credentials.json   # Google 서비스 계정 키 (커밋 금지)
-
-# 등록 사용자 얼굴 사진을 images/known/ 에 넣은 뒤
-python face_auth_safe.py
-```
-
-> 이 폴더에는 PC 측 Python 코드만 있습니다. LCD, LED, 서보모터, 자이로센서를 제어하는 Topst D3 보드 측 코드는 포함되어 있지 않습니다.
+*Note: This repository contains the PC-side Python code only. The Topst D3 firmware that controls the LCD, LEDs, servo, and gyro sensor is not included.*
 
 ---
 
-## 📈 성능 평가 및 고찰 (Evaluation)
+## 📈 Evaluation & Discussion
 
-* ✅ `face_recognition`의 128차원 얼굴 임베딩을 써서 사람 구분 성능이 확실했습니다.
-* ⚠️ 얼굴 인증 1회에 **3~4초** 정도 걸렸습니다. 얼굴 검출과 인코딩을 두 번 하는 부분(저장 후 다시 읽기)을 줄이면 개선할 수 있습니다.
-* 💡 모터 제어로 금고 문 자체를 자동으로 열고 닫는 구조까지 확장하면 좋겠다는 결론을 얻었습니다.
+*   ✅ The 128-dimensional face embeddings separated authorized users from other people reliably.
+*   ⚠️ Each face authentication attempt took about **3–4 seconds**. Removing the duplicate detection and encoding step (the frame is saved to disk and then read back) should cut this time.
+*   💡 A next step would be to have the motors open and close the safe door itself, not just the lock.
 
 ---
 
-## 📚 참고 (References)
-* [ageitgey/face_recognition](https://github.com/ageitgey/face_recognition)
+*This project was developed to build a practical two-factor safe that combines computer vision, embedded hardware control, and cloud-based intruder alerts.*
+
+**Developer:** Geonho Kim (leo6930)
+
+**Reference:** [ageitgey/face_recognition](https://github.com/ageitgey/face_recognition)
