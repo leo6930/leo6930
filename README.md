@@ -46,9 +46,9 @@ I am passionate about Robot, autonomous driving, GPS, high-precision localizatio
 * **Vehicle Localization Systems** & High-Precision Positioning
 * **GPS / GNSS** Technologies
 * **Multi-Sensor Fusion** (LiDAR, IMU, GPS/GNSS)
-* **Digital Twin** & Simulation-Based Validation for Autonomous Driving
+* **Digital Twin** & Simulation-Based Validation for Autonomous Driving & Robotics
 * **Scenario Generation & Data Augmentation**
-* Autonomous Driving Control & Navigation Algorithms
+* **Autonomous Driving Control & Navigation Algorithms**
 
 ---
 
